@@ -1,0 +1,8 @@
+<h1>Currency pairs</h1>
+
+<ul>
+  <% @symbols_hash.each do |currency| %>
+    <%curr_sym = currency.at(1).fetch("code")%>
+    <li><a href="/<%= curr_sym%>">Convert 1 <%= curr_sym%> to...</a></li>
+  <%end%>
+</ul>

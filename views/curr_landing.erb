@@ -1,0 +1,12 @@
+<h1>Convert <%= @sym %></h1>
+
+<p>Go <a href="/">back</a>.</p>
+
+<ul>
+  <% @symbols_hash.each do |currency| %>
+    <%curr_sym = currency.at(1).fetch("code")%>
+    <% if curr_sym != @sym %>
+    <li><a href="/<%=@sym%>/<%=curr_sym%>">Convert 1 <%= @sym %> to <%= curr_sym%>...</a></li>
+    <%end%>
+  <%end%>
+</ul>
